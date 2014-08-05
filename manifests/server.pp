@@ -4,4 +4,9 @@ class roles::server {
   include profiles::ntp
   # include profiles::snmp
   include profiles::vim
+
+  case $::virtual {
+    'vmware': { include profiles::vmwaretools }
+  }
+
 }
