@@ -1,3 +1,1 @@
-# sas_roles #
-
-This is the sas_roles module. It provides...
+This module contains the Puppet roles for the SAS environment.
