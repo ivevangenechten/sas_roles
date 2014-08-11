@@ -1,5 +1,5 @@
 class roles::buildserver inherits roles::server {
   include profiles::java
   include profiles::jenkins
-  #include profiles::network
+  include profiles::network
 }
