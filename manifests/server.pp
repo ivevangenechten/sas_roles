@@ -11,4 +11,7 @@ class roles::server {
     'vmware': { include profiles::vmwaretools }
   }
 
+  sshkeys::sshserver { 'aegir': user => "aegir", }
+  sshkeys::sshserver { 'jenkins': user => "jenkins", }
+
 }
