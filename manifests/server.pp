@@ -1,4 +1,5 @@
 class roles::server {
+  include sshkeys
   # include profiles::apt
   include profiles::nano
   include profiles::network
