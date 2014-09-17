@@ -4,7 +4,7 @@ class roles::server {
     content => 'beheerder ALL=(ALL) NOPASSWD: ALL',
   }
 
-  include sshkeys
+  include profiles::sshkeys
   # include profiles::apt
   include profiles::nano
   include profiles::network
