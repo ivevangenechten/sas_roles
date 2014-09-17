@@ -1,4 +1,5 @@
 class roles::server {
+
   sudo::conf { 'beheerder':
     content => 'beheerder ALL=(ALL) NOPASSWD: ALL',
   }
