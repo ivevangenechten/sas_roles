@@ -7,7 +7,7 @@ class roles::puppetmaster inherits roles::server {
     content => 'Defaults:foreman-proxy !requiretty',
   }
   sudo::conf { 'foreman2':
-    content => 'foreman-proxy ALL = NOPASSWD: /usr/bin/puppetrun',
+    content => 'foreman-proxy ALL = NOPASSWD: /usr/bin/puppet',
   }
 
 }
