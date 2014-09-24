@@ -11,7 +11,7 @@ class roles::puppetmaster inherits roles::server {
   }
 
   class { 'puppetdb':
-    listen_address => 'puppet.sas.vito.local',
+    listen_address => 'puppet.sas.vito.local:8081',
   }
   include puppetdb::master::config
 
