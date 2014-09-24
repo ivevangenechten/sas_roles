@@ -3,6 +3,9 @@ class roles::server {
   sudo::conf { 'beheerder':
     content => 'beheerder ALL=(ALL) NOPASSWD: ALL',
   }
+sudo::conf { 'jenkins-puppet':
+  content => 'jenkins ALL=(ALL) NOPASSWD: /usr/bin/puppet',
+}
 
   include profiles::sshkeys
   # include profiles::apt
