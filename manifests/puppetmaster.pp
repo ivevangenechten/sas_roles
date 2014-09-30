@@ -10,7 +10,7 @@ class roles::puppetmaster inherits roles::server {
     content => 'foreman-proxy ALL = NOPASSWD: /usr/bin/puppet',
   }
 
-  include puppetdb
-  include puppetdb::master::config
+  #include puppetdb
+  #include puppetdb::master::config
 
 }
