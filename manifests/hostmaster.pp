@@ -4,7 +4,11 @@ class roles::hostmaster inherits roles::server {
     content => 'aegir ALL=(ALL) NOPASSWD: ALL',
   }
 
+  class { '::profiles::mysql': }
 
-  include profiles::aegir
+  class { '::profiles::aegir':
+      require => Class['::profiles::mysql']
+  }
+
 
 }
