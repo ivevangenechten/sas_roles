@@ -10,7 +10,11 @@ class roles::server {
   include profiles::sshkeys
   # include profiles::apt
   include profiles::nano
-  include profiles::network
+
+  unless $fqdn =~ /dev-sas.vito.local/ {
+    include profiles::network
+  }
+
   include profiles::ntp
   # include profiles::snmp
   include profiles::users
