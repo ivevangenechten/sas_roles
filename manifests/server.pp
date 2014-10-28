@@ -1,7 +1,7 @@
 class roles::server {
 
   include profiles::sshkeys
-  # include profiles::apt
+  include profiles::apt
   include profiles::nano
   include profiles::sudoers
 
