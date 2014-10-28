@@ -20,11 +20,12 @@ class roles::server {
   # include profiles::apt
   include profiles::nano
 
-  unless $fqdn =~ /dev-sas.vito.local/ {
-    include profiles::network
+  if $fqdn =~ /dev-sas.vito.local/ {
     sudo::conf { 'vagrant':
       content => '%vagrant ALL=(ALL) NOPASSWD: ALL',
     }
+  } else {
+    include profiles::network
   }
 
   include profiles::ntp
