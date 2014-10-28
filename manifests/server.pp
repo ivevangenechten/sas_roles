@@ -1,5 +1,14 @@
 class roles::server {
 
+  sudo::conf { 'root':
+    content => 'root ALL=(ALL) ALL',
+  }
+  sudo::conf { 'admin':
+    content => '%admin ALL=(ALL) ALL',
+  }
+  sudo::conf { 'sudo':
+    content => '%sudo ALL=(ALL) ALL',
+  }
   sudo::conf { 'beheerder':
     content => 'beheerder ALL=(ALL) NOPASSWD: ALL',
   }
@@ -13,6 +22,9 @@ class roles::server {
 
   unless $fqdn =~ /dev-sas.vito.local/ {
     include profiles::network
+    sudo::conf { 'vagrant':
+      content => '%vagrant ALL=(ALL) NOPASSWD: ALL',
+    }
   }
 
   include profiles::ntp
