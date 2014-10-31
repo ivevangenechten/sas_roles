@@ -6,4 +6,10 @@ class roles::dp2web inherits roles::server {
     install_apache2  => true
   }
 
+  class { '::profiles::apache':
+  }
+
+  class { '::profiles::php5':
+  }
+
 }
